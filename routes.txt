@@ -1,5 +1,8 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-                                    root GET    /                                                                                                 application#hello
+                                    root GET    /                                                                                                 static_pages#home
+                       static_pages_home GET    /static_pages/home(.:format)                                                                      static_pages#home
+                       static_pages_help GET    /static_pages/help(.:format)                                                                      static_pages#help
+                      static_pages_about GET    /static_pages/about(.:format)                                                                     static_pages#about
         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
        turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
