@@ -12,4 +12,8 @@ class StaticPagesController < ApplicationController # rubocop:disable Style/Docu
   def about
     # ...
   end
+
+  def contact
+    # ...
+  end
 end
