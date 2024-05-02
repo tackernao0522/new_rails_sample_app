@@ -17,4 +17,18 @@ class ActiveSupport::TestCase # rubocop:disable Style/ClassAndModuleChildren
   def is_logged_in? # rubocop:disable Naming/PredicateName
     !session[:user_id].nil?
   end
+
+  # テストユーザーとしてログインする
+  def log_in_as(user)
+    session[:user_id] = user.id
+  end
+end
+
+class ActionDispatch::IntegrationTest # rubocop:disable Style/ClassAndModuleChildren
+  # テストユーザーとしてログインする
+  def log_in_as(user, password: 'password', remember_me: '1')
+    post login_path, params: { session: { email: user.email,
+                                          password:,
+                                          remember_me: } }
+  end
 end
