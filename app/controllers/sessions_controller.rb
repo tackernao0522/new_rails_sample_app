@@ -5,13 +5,14 @@ class SessionsController < ApplicationController # rubocop:disable Style/Documen
     # ...
   end
 
-  def create # rubocop:disable Metrics/AbcSize
+  def create # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
+      forwarding_url = session[:forwarding_url]
       reset_session # ログイン直前に必ずこれを書くこと
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       log_in user
-      redirect_to user
+      redirect_to forwarding_url || user
     else
       flash.now[:danger] = 'Invalid email/password combination' # 本当は正しくない
       render 'new', status: :unprocessable_entity
