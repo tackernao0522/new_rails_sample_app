@@ -15,6 +15,7 @@
                                          PATCH  /users/:id(.:format)                                                                              users#update
                                          PUT    /users/:id(.:format)                                                                              users#update
                                          DELETE /users/:id(.:format)                                                                              users#destroy
+                 edit_account_activation GET    /account_activations/:id/edit(.:format)                                                           account_activations#edit
         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
        turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
