@@ -1,4 +1,6 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+                     password_resets_new GET    /password_resets/new(.:format)                                                                    password_resets#new
+                    password_resets_edit GET    /password_resets/edit(.:format)                                                                   password_resets#edit
                                     root GET    /                                                                                                 static_pages#home
                                     help GET    /help(.:format)                                                                                   static_pages#help
                                    about GET    /about(.:format)                                                                                  static_pages#about
@@ -16,6 +18,11 @@
                                          PUT    /users/:id(.:format)                                                                              users#update
                                          DELETE /users/:id(.:format)                                                                              users#destroy
                  edit_account_activation GET    /account_activations/:id/edit(.:format)                                                           account_activations#edit
+                         password_resets POST   /password_resets(.:format)                                                                        password_resets#create
+                      new_password_reset GET    /password_resets/new(.:format)                                                                    password_resets#new
+                     edit_password_reset GET    /password_resets/:id/edit(.:format)                                                               password_resets#edit
+                          password_reset PATCH  /password_resets/:id(.:format)                                                                    password_resets#update
+                                         PUT    /password_resets/:id(.:format)                                                                    password_resets#update
         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
         turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
        turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
